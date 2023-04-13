@@ -82,13 +82,11 @@ def busquedaActividad(request):
 
 
 def buscar(request):
-    if  request.GET["ciudad"]:
-    
-        ciudad = request.GET["ciudad"]
+    ciudad = request.GET["ciudad"]
+
+    if ciudad!="":
         visitas= Visita.objects.filter(ciudad = ciudad)
         return render(request, "AppKaren/resultadosBusqueda.html", {"visitas": visitas, "ciudad": ciudad})
     
     else:
-        respuesta = "Ingresar Ciudad válida"
-
-    return HttpResponse(respuesta)
+        return render(request, "AppKaren/busquedaActividad.html", {"mensaje": "Ingrese una ciudad válida"})
