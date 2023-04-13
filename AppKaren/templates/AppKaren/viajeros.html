@@ -9,6 +9,7 @@ from AppKaren.forms import PasajeroForm
     <center><h1>Nuestros Viajeros!</h1></center>
 {% endblock %}
 
+
 <center><form action="" method="post">
     {% csrf_token %}
     {{form}}
@@ -19,4 +20,41 @@ from AppKaren.forms import PasajeroForm
 
 <center><h1> Lista de viajeros</h1></center>
 
-{% endblock %}
+<center><table>
+    
+    <thead>
+        </tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Destino</th>
+        <tr>
+    </thead>
+    <tbody>
+        
+        {% for viajero in viajeros %}
+        <tr>
+            <td>
+                {{viajero.id}}
+            </td>
+
+            <td>
+                {{viajero.nombre}}
+                </td>
+             <td>
+                {{viajero.apellido}}
+            </td>
+            <td>
+                {{viajero.email}}
+            </td>
+            <td>
+                {{viajero.destino}}
+            </td>
+                            
+        </tr>
+        {% endfor %}
+    </tbody>
+<table></center>
+
+    {% endblock %}

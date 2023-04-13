@@ -45,9 +45,9 @@ def paquetes(request):
         form = PaqueteForm(request.POST)
         if form.is_valid():
             paquete = Paquete()
-            paquete.lugar= form.cleaned_data["Lugar"]
-            paquete.cant_dias = form.cleaned_data["Cant. de dias"]         
-            paquete.cant_pasajeros = form.cleaned_data["Cant. de pasajeros"]
+            paquete.lugar = form.cleaned_data["lugar"]
+            paquete.cant_dias = form.cleaned_data["cant_dias"]         
+            paquete.cant_pasajeros = form.cleaned_data["cant_pasajeros"]
             paquete.save()
             form = PaqueteForm()
     else:
@@ -75,3 +75,20 @@ def destinos(request):
     visitas = Visita.objects.all()
     context ={"visitas": visitas, "form": form}       
     return render(request, "AppKaren/destinos.html", context)
+
+
+def busquedaActividad(request):
+    return render(request, "AppKaren/busquedaActividad.html")
+
+
+def buscar(request):
+    if  request.GET["ciudad"]:
+    
+        ciudad = request.GET["ciudad"]
+        visitas= Visita.objects.filter(ciudad = ciudad)
+        return render(request, "AppKaren/resultadosBusqueda.html", {"visitas": visitas, "ciudad": ciudad})
+    
+    else:
+        respuesta = "Ingresar Ciudad válida"
+
+    return HttpResponse(respuesta)

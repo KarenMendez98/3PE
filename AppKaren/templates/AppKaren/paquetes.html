@@ -20,4 +20,37 @@ from AppKaren.forms import PaqueteForm
 
 <center><h1> Lista de paquetes</h1></center>
 
+<center><table>
+    <thead>
+        </tr>
+        <th>ID</th>
+        <th>Lugar</th>
+        <th>Cant de Dias</th>
+        <th>Cant de Pasajeros</th>
+        <tr>
+    </thead>
+    <tbody>
+        
+        {% for paquete in paquetes %}
+        <tr>
+            <td>
+                {{paquete.id}}
+            </td>
+
+            <td>
+                {{paquete.lugar}}
+            </td>
+            <td>
+                {{paquete.cant_dias}}
+            </td>
+            <td>
+                {{paquete.cant_pasajeros}}
+            </td>
+                            
+        </tr>
+        {% endfor %}
+    </tbody>
+<table></center>
+
+
 {% endblock %}

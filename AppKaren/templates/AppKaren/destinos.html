@@ -105,4 +105,32 @@ from AppKaren.forms import VisitaForm
         
         <br>
 
+        <center><table>
+            <thead>
+                </tr>
+                <th>ID</th>
+                <th>Tipo de Actividad</th>
+                <th>Ciudad</th>
+                <tr>
+            </thead>
+            <tbody>
+                
+                {% for visita in visitas %}
+                <tr>
+                    <td>
+                        {{visita.id}}
+                    </td>
+
+                    <td>
+                        {{visita.tipo}}
+                    </td>
+                    <td>
+                        {{visita.ciudad}}
+                    </td>
+                                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        <table></center>
+        
 {% endblock %}
