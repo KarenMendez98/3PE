@@ -6,7 +6,9 @@ from AppKaren.forms import PasajeroForm
 {% block contenido_que_cambia %}
 
 {% block titulo %}
-    <center><h1>Nuestros Viajeros!</h1></center>
+    <center><h1>Nuestros Viajeros!</h1>
+<img src="https://img.freepik.com/vector-premium/viajero-turistico-pareja-mapa-equipaje-ilustracion-dibujos-animados-aislado_1207-1050.jpg" alt="" width="400" height="300" />></center>
+" alt=""></center>
 {% endblock %}
 
 
@@ -18,9 +20,8 @@ from AppKaren.forms import PasajeroForm
 
 <br>
 
-<center><h1> Lista de viajeros</h1></center>
-
-<center><table>
+<center><h1> Lista de viajeros</h1><center>
+    <table>
     
     <thead>
         </tr>
@@ -51,7 +52,12 @@ from AppKaren.forms import PasajeroForm
             <td>
                 {{viajero.destino}}
             </td>
-                            
+
+        <td>
+            <a class="btn btn-danger" href="{% url 'eliminarViajero'  viajero.id  %}">Eliminar </a>
+            <a class="btn btn-success" href="{% url 'editarViajero'  viajero.id  %}">Editar</a>
+        </td>
+
         </tr>
         {% endfor %}
     </tbody>

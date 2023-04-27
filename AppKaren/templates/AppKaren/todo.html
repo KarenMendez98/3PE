@@ -1,0 +1,42 @@
+{% extends "AppKaren/padre.html" %}
+{% load static %}
+
+{% block contenido_que_cambia %}
+
+<center>
+<br>
+<a class="btn-primary">BUSQUEDA ACTIVIDAD</a>
+<p>Algunas de nuestras visitas te harán enloquecer! Busca entre nuestras favoritas.</p>
+<a class="btn btn-primary" href="{% url 'busquedaActividad' %}">Leer Más</a>
+<br>
+<br>
+<a class="btn-primary">AGREGAR AVATAR</a>
+<p>Modificar tu avatar apenas tiñas tu pelo para que siempre matchee con tu stilo.</p>
+<a class="btn btn-primary" href="{% url 'agregarAvatar' %}">Leer Más</a>
+<br>
+<br>
+<a class="btn-primary">ACERCA DE MI</a>
+<p>Conoce un poco más sobre la estudiante que está detrás de este proyecto.</p>
+<a class="btn btn-primary" href="{% url 'about' %}">Leer Más</a>
+<br>
+<br>
+<a class="btn-primary">VIAJEROS</a>
+<p>Conoce un poco más sobre la estudiante que está detrás de este proyecto.</p>
+<a class="btn btn-primary" href="{% url 'viajeros' %}">Leer Más</a>
+<br>
+<br>
+<a class="btn-primary">PAQUETES</a>
+<p>Conoce un poco más sobre la estudiante que está detrás de este proyecto.</p>
+<a class="btn btn-primary" href="{% url 'paquetes' %}">Leer Más</a>
+<br>
+<br>
+<a class="btn-primary">DESTINOS</a>
+<p>Conoce un poco más sobre la estudiante que está detrás de este proyecto.</p>
+<a class="btn btn-primary" href="{% url 'destinos' %}">Leer Más</a>
+
+<br>
+<br>
+</center>
+{% endblock %}
+
+
