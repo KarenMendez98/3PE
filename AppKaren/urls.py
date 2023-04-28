@@ -28,5 +28,14 @@ urlpatterns = [
     path('editarPerfil/', editarPerfil, name='editarPerfil'),
     path('agregarAvatar/', agregarAvatar, name='agregarAvatar'),
     path('about/', about, name='about'),
-    path('todo/', todo, name='todo')
+    path('todo/', todo, name='todo'),
+    path('paris/',paris, name="paris"),
+    path('puntaCana/', puntaCana, name="puntaCana"),
+    path('miami/', miami, name="miami"),
+    path('egipto/', egipto, name="egipto"),
+    path('hongKong/', hongKong, name="hongKong"),
+    path('newZeland/', newZeland, name="newZeland")
+
+
+
 ]

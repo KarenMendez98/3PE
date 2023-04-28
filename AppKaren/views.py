@@ -37,6 +37,20 @@ def busquedaActividad(request):
 def agregarAvatar(request):
     return render(request, "AppKaren/AgregarAvatar.html",{"avatar":obtenerAvatar(request)})
 
+def paris(request):
+    return render(request, "AppKaren/paris.html",{"avatar":obtenerAvatar(request)})
+def puntaCana(request):
+    return render(request, "AppKaren/puntaCana.html",{"avatar":obtenerAvatar(request)})
+def miami(request):
+    return render(request, "AppKaren/miami.html",{"avatar":obtenerAvatar(request)})
+def egipto(request):
+    return render(request, "AppKaren/egipto.html",{"avatar":obtenerAvatar(request)})
+def hongKong(request):
+    return render(request, "AppKaren/hongKong.html",{"avatar":obtenerAvatar(request)})
+def newZeland(request):
+    return render(request, "AppKaren/newZeland.html",{"avatar":obtenerAvatar(request)})
+
+
 
 ###
 def paquetes(request):    
@@ -266,3 +280,4 @@ class PaqueteUpdate(LoginRequiredMixin, UpdateView):#vista usada para EDITAR
     success_url = reverse_lazy('paquete_list')
     fields=['lugar', 'cant_pasajeros', 'cant_dias']
   
+
