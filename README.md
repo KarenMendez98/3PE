@@ -1,5 +1,5 @@
-3ERA PRE ENTREGA:
-Esta es la tercer pre-entrega del curso de Python (comision 51325)
+ENTREGA FINAL:
+Esta es la entrega del proyecto final del curso de Python (comision 51325)
 
 Estas instrucciones les permitirán obtener una copia del proyecto en su máquina local para chequear el funcionamiento del mismo y evaluar así la entrega.
 
@@ -20,9 +20,13 @@ Ejecutando las pruebas:
 
 En ellos se podrá agregar información a la base de datos utilizando los forms de dichos templates.
 
-- El urls /busquedaActividad, los llevará a un nuevo template donde se podrá filtrar las actividades (isitas) colocando la ciudad.
+- El url /busquedaActividad, los llevará a un nuevo template donde se podrá filtrar las actividades (isitas) colocando la ciudad.
 De no haber actividades precargadas en esa ciudad, la app devolverá el mensaje "NO HAY ACTIVIDADES"
 Mientras que, en caso de no colocar Ciudad alguna, la app devolverá el mensaje: "Ingrese una ciudad válida"
+
+- El url /todo los llevará a un nuevo template donde se podrá visualizar la totalidad de actividades de la pag.
+
+- Una vez logueados, podrán agregar un avatar a su perfil.
 
 
 Construido con:  VisualCode
