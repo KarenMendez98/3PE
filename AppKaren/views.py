@@ -50,6 +50,8 @@ def hongKong(request):
 def newZeland(request):
     return render(request, "AppKaren/newZeland.html",{"avatar":obtenerAvatar(request)})
 
+def chat(request):
+    return render(request, "AppKaren/chat.html",{"avatar":obtenerAvatar(request)})
 
 
 ###
@@ -73,23 +75,6 @@ def paquetes(request):
 
 
 
-def destinos(request):
-    
-    if request.method =="POST":
-        form = VisitaGForm(request.POST)
-        if form.is_valid():
-            visita = Visita()
-            visita.tipo = form.cleaned_data["tipo"]
-            visita.ciudad = form.cleaned_data["ciudad"]         
-            visita.save()
-            form = VisitaGForm()
-    else:
-        form = VisitaGForm()
-
-    visitas = Visita.objects.all()  
-
-    avatar= Avatar.objects.filter(user=request.user.id)[0].imagen.url          
-    return render(request, "AppKaren/destinos.html", {"visitas": visitas, "form": form, "avatar":avatar} )
 
 ###
 
@@ -281,3 +266,40 @@ class PaqueteUpdate(LoginRequiredMixin, UpdateView):#vista usada para EDITAR
     fields=['lugar', 'cant_pasajeros', 'cant_dias']
   
 
+###
+
+@login_required
+def chat(request):
+    if request.method =="POST":
+        form = MensajeCForm(request.POST)
+        if form.is_valid():
+            mensaje = Mensaje()
+            mensaje.user = form.cleaned_data["user"]
+            mensaje.texto = form.cleaned_data["texto"]         
+            mensaje.save()
+            form = MensajeCForm()
+    else:
+        form = MensajeCForm()
+
+    mensajes = Mensaje.objects.all()  
+
+    avatar= Avatar.objects.filter(user=request.user.id)[0].imagen.url          
+    return render(request, "AppKaren/chat.html", {"mensajes": mensajes, "form": form, "avatar":avatar})
+
+
+def destinos(request):
+    if request.method =="POST":
+        form = VisitaGForm(request.POST)
+        if form.is_valid():
+            visita = Visita()
+            visita.tipo = form.cleaned_data["tipo"]
+            visita.ciudad = form.cleaned_data["ciudad"]         
+            visita.save()
+            form = VisitaGForm()
+    else:
+        form = VisitaGForm()
+
+    visitas = Visita.objects.all()  
+
+    avatar= Avatar.objects.filter(user=request.user.id)[0].imagen.url          
+    return render(request, "AppKaren/destinos.html", {"visitas": visitas, "form": form, "avatar":avatar} )

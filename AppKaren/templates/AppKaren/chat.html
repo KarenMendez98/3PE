@@ -1,0 +1,59 @@
+from AppKaren.forms import MensajeCForm
+
+{% extends "AppKaren/padre.html" %}
+
+{% load static %}
+    
+    {% block contenido_que_cambia %}
+        
+    <center><h1>CHAT</h1></center>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div> <br>
+
+        <center><form action="" method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Agregar">
+        </form></center>
+        
+        <br>
+
+        <center><table>
+            <thead>
+                <th>User </th>
+
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+
+                <th>Mensaje </th>
+            </thead>
+            <tbody>
+                
+                {% for mensaje in mensajes %}
+
+                <tr>
+                    <td>
+                    User: {{mensaje.user}}
+                    </td>
+                    
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                       
+                    <td>
+                    {{mensaje.texto}}
+                    </td>
+                                    
+                </tr>
+                {% endfor %}
+{% endblock %}

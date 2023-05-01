@@ -49,3 +49,10 @@ class UserEditForm(UserCreationForm):
 
 class AvatarForm(forms.Form):
     imagen=forms.ImageField(label="Imagen")
+
+###
+
+class MensajeCForm(forms.Form):
+    user= forms.CharField(max_length=50)
+    texto= forms.CharField(max_length=150)   
+

@@ -21,6 +21,21 @@ class Paquete(models.Model):
         return f"{self.lugar} {self.cant_pasajeros} {self.cant_dias}" 
 
 
+
+class Avatar(models.Model):
+    imagen= models.ImageField(upload_to="avatars")
+    user=models.ForeignKey(User, on_delete=models.CASCADE)
+
+####
+
+class Mensaje(models.Model):
+    user= models.CharField(max_length=50)
+    texto= models.CharField(max_length=150)   
+    
+    def __str__(self):
+        return f"{self.user} - {self.texto}"    
+
+
 class Visita(models.Model):
     tipo= models.CharField(max_length=50)
     ciudad= models.CharField(max_length=50)   
@@ -28,10 +43,4 @@ class Visita(models.Model):
     def __str__(self):
         return f"{self.tipo} - {self.ciudad}"    
     
-
-class Avatar(models.Model):
-    imagen= models.ImageField(upload_to="avatars")
-    user=models.ForeignKey(User, on_delete=models.CASCADE)
-
-
 

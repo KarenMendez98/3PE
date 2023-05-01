@@ -5,4 +5,5 @@ admin.site.register(Viajero)
 admin.site.register(Visita)
 admin.site.register(Paquete)
 admin.site.register(Avatar)
+admin.site.register(Mensaje)
 

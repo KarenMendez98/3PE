@@ -34,8 +34,7 @@ urlpatterns = [
     path('miami/', miami, name="miami"),
     path('egipto/', egipto, name="egipto"),
     path('hongKong/', hongKong, name="hongKong"),
-    path('newZeland/', newZeland, name="newZeland")
-
-
+    path('newZeland/', newZeland, name="newZeland"),
+    path('chat/', chat, name="chat")
 
 ]
